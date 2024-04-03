@@ -11,10 +11,9 @@
     "cleanDocker": "docker rm -f docker-restful-api",
     "startDocker": "docker start docker-restful-api",
     "stopDocker": "docker stop docker-restful-api",
-    "devStart": "nodemon npm run dev && npm run startDocker",
-    "server": "npm run startDocker && node index.js",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "develop": "concurrently \"npm run devStart\" \"npm run client\""
+    "develop": "npm run startDocker && npm run dev",
+    "server": "npm run startDocker",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Johannes Ström, Robin Sevelin, Jimme Häglund, Josefin Olsson",
   "license": "ISC",
@@ -34,7 +33,6 @@
     "tailwindcss": "^3.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
-    "concurrently": "^8.2.2",
-    "nodemon": "^3.0.1"
+    "concurrently": "^8.2.2"
   }
 }
