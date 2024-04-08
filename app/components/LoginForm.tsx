@@ -4,15 +4,19 @@ import { User } from '@/pages/api/user';
 import React, { useEffect, useState } from 'react'
 
 const LoginForm = () => {
-  const [emailField, setEmailField] = useState<string>();
-  const [passwordField, setPasswordField] = useState<string>();
-  const submitHandler = (data: any) => {
-    console.log(data)
+  const [email, setEmailField] = useState<string>();
+  const [password, setPasswordField] = useState<string>();
+  const submitHandler = async (e: any) => {
+    e.preventDefault();
+    const user = await fetch('api/user', {
+      method: 'POST',
+      body: JSON.stringify({ email, password })
+    });
   }
 
   return (
     <div>
-      <form onSubmit={submitHandler} method="post">
+      <form onSubmit={e => submitHandler(e)} method="post">
 
         <label htmlFor="emailField">email</label>
         <input onChange={(e) => { setEmailField(e.target.value) }} id="emailField" type="email" />

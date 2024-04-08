@@ -9,7 +9,8 @@ export interface ResponseData {
 export interface User {
   name: string,
   password: string,
-  id: number
+  id: number,
+  email: string
 }
 
 export default function handler(
@@ -20,7 +21,15 @@ export default function handler(
   const filePath = 'json/data.json';
 
   if (req.method === 'POST') {
-    // Process a POST request
+    const jsonData = fs.readFileSync(filePath, 'utf8');
+    const parsedData = JSON.parse(jsonData);
+    const users = parsedData.users;
+    const email = req.body.email;
+    const password = req.body.password;
+
+    const foundUser = users.find((user:User) => user.email === email && user.password === password);
+    res.status(200).json(foundUser);
+    
   } else {
     const jsonData = fs.readFileSync(filePath, 'utf8');
     const parsedData = JSON.parse(jsonData);
