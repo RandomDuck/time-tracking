@@ -1,9 +1,9 @@
-import MainPage from './components/MainPage';
+import LoginForm from './components/LoginForm';
 
 export default function Home() {
   return (
     <>
-    <MainPage />
+      <LoginForm />
     </>
   );
 }
