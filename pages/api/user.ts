@@ -2,8 +2,13 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import fs from 'fs';
 
  
-type ResponseData = {
-  message: string
+export interface ResponseData {
+  users: User[]
+}
+
+export interface User{
+  name: string,
+  id: number
 }
  
 export default function handler(

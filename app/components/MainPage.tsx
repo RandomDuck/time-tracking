@@ -1,15 +1,26 @@
 'use client';
-import React from 'react'
-import { getLocalData } from '@/lib/localdata';
 
-const localData = getLocalData();
+import { User } from '@/pages/api/user';
+import React, { useEffect, useState } from 'react'
 
 const MainPage = () => {
+const [users, setUsers] = useState<User[]>([]);
+
+useEffect(() => {
+	if(users.length === 0){
+		const getUsers = async () => {
+			const response = await fetch('/api/users')
+			const data = await response.json();
+			setUsers(data)
+		}
+		getUsers()
+	}
+}, [])
 
 	return (
 		<div>
-			{localData.map((user, index) => (
-				<div key={index}>{user.username}</div>
+			{users.map((user) => (
+				<div key={user.id}>{user.name}</div>
 			))}
 		</div>
 	)
