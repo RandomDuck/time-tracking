@@ -1,23 +1,10 @@
-
+'use client';
 import React from 'react'
-import { getLocalData } from '../../lib/localdata';
+import { getLocalData } from '@/lib/localdata';
 
-interface Props {
-	localData: IUser[]
-}
+const localData = getLocalData();
 
-interface IUser {
-	username: string
-}
-
-export async function getStaticProps() {
-	const localData = await getLocalData()
-
-	return {
-		props: { localData }
-	}
-}
-const MainPage = ({ localData }: Props) => {
+const MainPage = () => {
 
 	return (
 		<div>

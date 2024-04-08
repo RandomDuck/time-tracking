@@ -11,7 +11,7 @@ export default function handler(
   res: NextApiResponse<ResponseData>
 ) {
 
-	const filePath = 'temp.db.json';
+	const filePath = 'json/data.json';
 
 	if (req.method === 'POST') {
     // Process a POST request
