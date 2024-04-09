@@ -1,4 +1,3 @@
 {
-  "port": 4000,
-  "databaseUrl": "mongodb://127.0.0.1:27017/"
+  "databaseUrl": "mongodb+srv://timeTracker:OWVGLo8g7VtRqS7Z@cluster0.oqsssau.mongodb.net/?retryWrites=true&w=majority&appName=cluster0"
 }
