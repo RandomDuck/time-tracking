@@ -9,7 +9,7 @@ export interface ResponseData {
 export interface User {
   name: string,
   password: string,
-  id: number,
+  id: string,
   email: string
 }
 
@@ -26,14 +26,18 @@ export default function handler(
     const users = parsedData.users;
     const reqData = JSON.parse(req.body);
     const { email, password } = reqData;
-    
-    const foundUser = users.find((user:User) => user.email === email && user.password === password);
+
+    const foundUser = users.find((user: User) => user.email === email && user.password === password);
 
     res.status(200).json(foundUser);
-    
+
   } else {
     const jsonData = fs.readFileSync(filePath, 'utf8');
     const parsedData = JSON.parse(jsonData);
-    res.status(200).json(parsedData);
+    const users = parsedData.users;
+    const id = req.query.id;
+    const foundUser = users.find((user: User) => user.id === id);
+
+    res.status(200).json(foundUser);
   }
 }

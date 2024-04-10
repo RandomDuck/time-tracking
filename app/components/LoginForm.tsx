@@ -1,9 +1,11 @@
 'use client';
 
 import { User } from '@/pages/api/user';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
 const LoginForm = () => {
+  const router = useRouter()
   const [email, setEmailField] = useState<string>();
   const [password, setPasswordField] = useState<string>();
   const submitHandler = async (e: any) => {
@@ -14,8 +16,11 @@ const LoginForm = () => {
     });
 
     const user = await res.json();
+    // set user in a state
+    sessionStorage.setItem('user', user.id);
 
-    console.log(user);
+    // redirect to logged in page
+    router.push('/user');
   }
 
   return (
@@ -24,9 +29,9 @@ const LoginForm = () => {
         <form onSubmit={e => submitHandler(e)} method="post">
 
           <label className='block' htmlFor="emailField">Email:</label>
-          <input className="mt-2 mb-4 w-full" onChange={(e) => { setEmailField(e.target.value) }} id="emailField" type="email" />
+          <input className="mt-2 mb-4 w-full text-black" onChange={(e) => { setEmailField(e.target.value) }} id="emailField" type="email" />
           <label htmlFor="passwordField">Password:</label>
-          <input className="mt-2 mb-4 w-full" onChange={(e) => { setPasswordField(e.target.value) }} id="passwordField" type="password" />
+          <input className="mt-2 mb-4 w-full text-black" onChange={(e) => { setPasswordField(e.target.value) }} id="passwordField" type="password" />
           <button className='btn-primary' type='submit'>Login</button>
         </form>
       </div>
