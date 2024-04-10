@@ -1,9 +1,14 @@
 import LoginForm from './components/LoginForm';
 
 export default function Home() {
+  const props = getStaticProps()
+
+  console.log(props);
+
   return (
     <>
-      <LoginForm />
+      {/* <MainPage /> */}
+      <h1>hello</h1>
     </>
   );
 }

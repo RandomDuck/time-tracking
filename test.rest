@@ -1,0 +1,29 @@
+# ---- USERS ----
+### get all users 
+GET http://localhost:3000/api/users 
+### post 
+POST http://localhost:3000/api/user Content-Type: application/json
+
+{ "username":"norman", "password":"password123" }
+
+### patch 
+PATCH HTTP://localhost:3000/users/65536bf7c5ea12a764ef1c46 Content-Type: application/json
+
+{"password":"fake"}
+
+# ---- NOTES ----
+### 
+### GET HTTP://localhost:3000/notes/norman
+GET HTTP://localhost:3000/notes 
+
+### post 
+POST http://localhost:3000/notes Content-Type: application/json
+
+{ "username":"norman" }
+
+### patch 
+PATCH HTTP://localhost:3000/notes/norman Content-Type: application/json
+
+{"username":"dave"} ### delete id DELETE HTTP://localhost:3000/notes/ Content-Type: application/json
+
+{"id":"65537f85c7ba3a926b9a00eb"}
