@@ -24,10 +24,11 @@ export default function handler(
     const jsonData = fs.readFileSync(filePath, 'utf8');
     const parsedData = JSON.parse(jsonData);
     const users = parsedData.users;
-    const email = req.body.email;
-    const password = req.body.password;
-
+    const reqData = JSON.parse(req.body);
+    const { email, password } = reqData;
+    
     const foundUser = users.find((user:User) => user.email === email && user.password === password);
+
     res.status(200).json(foundUser);
     
   } else {
