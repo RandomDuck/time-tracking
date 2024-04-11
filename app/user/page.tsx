@@ -17,6 +17,7 @@ export default function Home() {
   //   return data;
   // }
   // console.log(id, fetchUser());
+  console.log(user)
   return (
     <>
       <section>
