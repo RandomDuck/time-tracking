@@ -7,7 +7,7 @@ export default function Home() {
       <Link className='btn-primary' href="/login">
         Login
       </Link>
-      <MainPage />
+      {/* <MainPage /> */}
     </>
   );
 }

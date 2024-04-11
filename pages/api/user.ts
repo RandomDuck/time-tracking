@@ -2,10 +2,6 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import fs from 'fs';
 
 
-export interface ResponseData {
-  users: User[]
-}
-
 export interface User {
   name: string,
   password: string,
@@ -15,7 +11,7 @@ export interface User {
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
+  res: NextApiResponse<any>
 ) {
 
   const filePath = 'json/data.json';
@@ -38,6 +34,15 @@ export default function handler(
     const id = req.query.id;
     const foundUser = users.find((user: User) => user.id === id);
 
-    res.status(200).json(foundUser);
+    res.status(200).json({
+      "hek": 1
+    });
+
+    res.status(200).json({
+      name: foundUser.name,
+      password: foundUser.password,
+      id: foundUser.id,
+      email: foundUser.email
+    });
   }
 }

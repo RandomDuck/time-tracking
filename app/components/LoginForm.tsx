@@ -15,10 +15,10 @@ const LoginForm = () => {
       body: JSON.stringify({ email, password })
     });
 
-    const user = await res.json();
+    const user: User = await res.json();
     // set user in a state
     sessionStorage.setItem('user', JSON.stringify(user));
-
+    console.log(user)
     // redirect to logged in page
     router.push('/user');
   }

@@ -9,7 +9,7 @@ export default function Home() {
   useEffect(() => {
     setUser(JSON.parse(sessionStorage.getItem('user') || ''));
   }, []);
-  
+
   // const fetchUser = async () => {
   //   const res = await fetch('api/user?id=' + id);
   //   const data = await res;
@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <section>
-        <h1>Welcome { user?.name }</h1>
+        <h1>Welcome {user?.name}</h1>
         <ul>
           {user && Object.keys(user).map((key, index) => {
             return <li key={index}>{user[key]}</li>;
