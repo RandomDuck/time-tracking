@@ -17,7 +17,7 @@ const LoginForm = () => {
 
     const user = await res.json();
     // set user in a state
-    sessionStorage.setItem('user', user.id);
+    sessionStorage.setItem('user', JSON.stringify(user));
 
     // redirect to logged in page
     router.push('/user');
