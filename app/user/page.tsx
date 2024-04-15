@@ -1,5 +1,6 @@
 'use client';
 
+import checkIfRedirect from "@/lib/urlProofing";
 import { User } from "@/pages/api/user";
 import { useEffect, useState } from "react";
 
@@ -7,7 +8,8 @@ export default function Home() {
   const [user, setUser] = useState<User>();
 
   useEffect(() => {
-    setUser(JSON.parse(sessionStorage.getItem('user') || ''));
+    setUser(JSON.parse(sessionStorage.getItem('user') || '{}'));
+    checkIfRedirect('/user');
   }, []);
 
   return (
