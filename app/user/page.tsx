@@ -23,7 +23,7 @@ export default function Home() {
     <>
       <section>
         <h1>Welcome {user?.name}</h1>
-        <button onClick={logOut}>Log out</button>
+        <button className='btn-primary' onClick={logOut}>Log out</button>
       </section>
     </>
   );
