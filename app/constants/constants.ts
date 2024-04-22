@@ -1,3 +1,5 @@
+import { Route } from '../models/Route';
+
 export const FUNCTION_ROUTES = [
   { id: 0, title: 'Home', url: '/' },
   { id: 1, title: 'Demo', url: '/pages/public/functions/demo' },
@@ -24,3 +26,6 @@ export const COMPANY_ROUTES = [
   { id: 2, title: 'Worker data', url: '/pages/company/worker-data'},
   { id: 3, title: 'Project control', url: '/pages/company/project-control' },
 ];
+
+
+export const ALL_ROUTES = [FUNCTION_ROUTES, INFO_ROUTES, USER_ROUTES, COMPANY_ROUTES]

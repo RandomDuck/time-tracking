@@ -3,7 +3,6 @@ import fs from 'fs';
 import { User } from '../models/User';
 
 
-
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
@@ -17,6 +16,8 @@ export default function handler(
 
     try {
       const reqData = JSON.parse(req.body);
+      console.log(reqData);
+      
       const { email, password } = reqData;
       const foundUser: User = users.find(
         (user: User) => user.email === email && user.password === password

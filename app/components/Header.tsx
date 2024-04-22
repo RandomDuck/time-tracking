@@ -1,13 +1,28 @@
-import React from 'react'
-import PublicNavigation from './PublicNavigation'
+'use client';
+
+import React, { useState } from 'react';
+import Navigation from './Navigation';
+import {
+  ALL_ROUTES,
+  FUNCTION_ROUTES,
+} from '../constants/constants';
 
 const Header = () => {
-	return (
-		<header className='flex justify-between p-3'>
-			<h1>Time tracking</h1>
-			<PublicNavigation />
-		</header>
-	)
-}
+  const [route, setRoute] = useState(FUNCTION_ROUTES);
 
-export default Header
+  return (
+    <header className='flex justify-between p-3'>
+      <h1>Time tracking</h1>
+      <div className='flex gap-2'>
+        {ALL_ROUTES.map((route, index) => (
+          <button key={index} onClick={() => setRoute(route)}>
+            {route[index].title}
+          </button>
+        ))}
+      </div>
+      <Navigation routes={route} />
+    </header>
+  );
+};
+
+export default Header;

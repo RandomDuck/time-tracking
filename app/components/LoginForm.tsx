@@ -12,12 +12,15 @@ const LoginForm = () => {
   const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await fetch('api/user', {
+
+      const res = await fetch('../../api/user', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
       });
 
       const user: User = await res.json();
+
+      console.log(user);
 
       sessionStorage.setItem(
         'user',
