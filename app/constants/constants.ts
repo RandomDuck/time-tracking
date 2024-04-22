@@ -5,6 +5,22 @@ export const FUNCTION_ROUTES = [
   { id: 3, title: 'Registration', url: '/pages/public/functions/registration' },
 ];
 
-export const INFO_ROUTES = '/pages/public/info/';
-export const USER_ROUTES = '/pages/user/';
-export const COMPANY_ROUTES = '/pages/company/';
+export const INFO_ROUTES = [
+  { id: 0, title: 'About', url: '/pages/public/info/about' },
+  { id: 1, title: 'Pricing', url: '/pages/public/info/pricing' },
+  { id: 2, title: 'FAQ', url: '/pages/public/info/faq' },
+];
+
+export const USER_ROUTES = [
+  { id: 0, title: 'Profile', url: '/pages/user/profile' },
+  { id: 1, title: 'Schedule', url: '/pages/user/schedule' },
+  { id: 2, title: 'Timecard', url: '/pages/user/timecard' },
+  { id: 3, title: 'Tracking', url: '/pages/user/tracking' },
+];
+
+export const COMPANY_ROUTES = [
+  { id: 0, title: 'Profile', url: '/pages/company/admin' },
+  { id: 1, title: 'Admin control', url: '/pages/company/admin'},
+  { id: 2, title: 'Worker data', url: '/pages/company/worker-data'},
+  { id: 3, title: 'Project control', url: '/pages/company/project-control' },
+];
