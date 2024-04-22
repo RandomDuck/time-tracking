@@ -1,7 +1,7 @@
 'use client';
 
+import { User } from '@/app/models/User';
 import checkIfRedirect from "@/lib/urlProofing";
-import { User } from "@/pages/api/user";
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
 

@@ -1,12 +1,15 @@
 import Link from 'next/link'
 import React from 'react'
+import { FUNCTION_ROUTES } from '../constants/constants'
+
 
 const Navigation = () => {
 	return (
 		<nav>
 			<ul>
-				<li><Link href={'/calender'}>Calender</Link></li>
-				<li><Link href={'/'}>Home</Link></li>
+				{FUNCTION_ROUTES.map((route) => (
+					<li key={route.id} className=' float-left mr-5'><a href={route.url}>{route.title}</a></li>
+				))}
 			</ul>
 		</nav>
 	)

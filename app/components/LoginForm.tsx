@@ -1,8 +1,8 @@
 'use client';
 
-import { User } from '@/pages/api/user';
 import { useRouter } from 'next/navigation';
 import React, { FormEvent, useState } from 'react';
+import { User } from '../models/User';
 
 const LoginForm = () => {
   const router = useRouter();

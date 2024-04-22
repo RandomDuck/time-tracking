@@ -1,12 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
+import { User } from '../models/User';
 
-export interface User {
-  name: string;
-  password: string;
-  id: string;
-  email: string;
-}
+
 
 export default function handler(
   req: NextApiRequest,
