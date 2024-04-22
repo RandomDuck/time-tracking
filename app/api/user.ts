@@ -1,11 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import { User } from '../../app/models/User';
+import { cookies } from 'next/headers';
 
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<any>
+  res: NextApiResponse
 ) {
   const filePath = 'json/data.json';
 
@@ -16,13 +17,15 @@ export default function handler(
 
     try {
       const reqData = JSON.parse(req.body);
-      console.log(reqData);
-      
+    
       const { email, password } = reqData;
       const foundUser: User = users.find(
         (user: User) => user.email === email && user.password === password
       );
-      res.status(200).json(foundUser);
+
+        cookies().set('user', foundUser.name)
+        res.status(200).json(foundUser);
+    
     } catch (error) {
       res.status(500).json({ message: 'no user found' });
     }
