@@ -1,5 +1,3 @@
-import { Route } from '../models/Route';
-
 export const FUNCTION_ROUTES = [
   { id: 0, title: 'Home', url: '/' },
   { id: 1, title: 'Demo', url: '/pages/public/functions/demo' },

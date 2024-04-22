@@ -1,9 +1,9 @@
-import { Routes } from '../models/Route'
+import { Routes } from '../models/Route';
 import Link from 'next/link';
-import React from 'react'
+import React from 'react';
 
-const Navigation = ({routes}: Routes) => {
-	return (
+const Navigation = ({ routes }: Routes) => {
+  return (
     <nav>
       <ul>
         {routes.map((route) => (
@@ -13,7 +13,7 @@ const Navigation = ({routes}: Routes) => {
         ))}
       </ul>
     </nav>
-	)
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

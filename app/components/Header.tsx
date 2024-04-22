@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 import {
   ALL_ROUTES,
   FUNCTION_ROUTES,
-} from '../constants/constants';
+} from '../constants/routes';
 
 const Header = () => {
   const [route, setRoute] = useState(FUNCTION_ROUTES);
