@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
-import { User } from '../models/User';
+import { User } from '../../app/models/User';
 
 
 export default function handler(

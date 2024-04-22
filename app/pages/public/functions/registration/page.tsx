@@ -1,9 +1,10 @@
+import Form from '@/app/components/Form'
 import React from 'react'
 
 const page = () => {
 	return (
 		<div>
-			<h2>Registration</h2>
+			<Form title={'register'}/>
 		</div>
 	)
 }

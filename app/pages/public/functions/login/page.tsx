@@ -1,10 +1,10 @@
-import LoginForm from '@/app/components/LoginForm'
+import Form from '@/app/components/Form'
 import React from 'react'
 
 const page = () => {
 	return (
 		<div>
-			<LoginForm />
+			<Form title={'login'} />
 		</div>
 	)
 }

@@ -4,7 +4,11 @@ import { useRouter } from 'next/navigation';
 import React, { FormEvent, useState } from 'react';
 import { User } from '../models/User';
 
-const LoginForm = () => {
+interface Props{
+  title: string
+}
+
+const Form = ({title}: Props) => {
   const router = useRouter();
   const [email, setEmailField] = useState<string>();
   const [password, setPasswordField] = useState<string>();
@@ -13,14 +17,12 @@ const LoginForm = () => {
     e.preventDefault();
     try {
 
-      const res = await fetch('../../api/user', {
+      const res = await fetch('/api/user', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
       });
 
       const user: User = await res.json();
-
-      console.log(user);
 
       sessionStorage.setItem(
         'user',
@@ -34,6 +36,7 @@ const LoginForm = () => {
 
   return (
     <div className='flex h-screen text-white'>
+      <h2>{title}</h2>
       <div className='bg-slate-100 rounded-xl p-8 dark:bg-slate-800 m-auto w-[300px]'>
         <form onSubmit={(e) => submitHandler(e)} method='post'>
           <label className='block' htmlFor='emailField'>
@@ -57,7 +60,7 @@ const LoginForm = () => {
             type='password'
           />
           <button className='btn-primary' type='submit'>
-            Login
+            {title} user
           </button>
         </form>
       </div>
@@ -65,4 +68,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default Form;
