@@ -3,12 +3,13 @@
 import { useRouter } from 'next/navigation';
 import React, { FormEvent, useState } from 'react';
 import { User } from '../models/User';
+import { USER_ROUTES } from '../constants/routes';
 
-interface Props{
-  title: string
+interface Props {
+  title: string;
 }
 
-const Form = ({title}: Props) => {
+const Form = ({ title }: Props) => {
   const router = useRouter();
   const [email, setEmailField] = useState<string>();
   const [password, setPasswordField] = useState<string>();
@@ -16,7 +17,6 @@ const Form = ({title}: Props) => {
   const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-
       const res = await fetch('/api/user', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
@@ -28,7 +28,7 @@ const Form = ({title}: Props) => {
         'user',
         JSON.stringify({ id: user.id, name: user.name, email: user.email })
       );
-      router.push('/user');
+      router.push(USER_ROUTES[0].url);
     } catch (error) {
       alert('something went wrong');
     }
