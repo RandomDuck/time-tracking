@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn-primary {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+:-moz-loading{
+  position: relative;
+  min-height: calc(100vh - 200px);
+}
+
+button {
+  @apply  font-bold py-2 px-4 rounded;
+}
+
+.primary{
+  @apply  text-white border-solid border-2 border-white
+}
+
+.secondary{
+  @apply bg-red-500 text-black
+}
+
+.ghost{
+  @apply  text-sky-500 border-solid border-2 border-sky-500
 }

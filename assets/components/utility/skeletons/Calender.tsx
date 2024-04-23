@@ -4,7 +4,7 @@ interface Props {
   children: ReactNode;
 }
 
-const Skeleton = ({ children }: Props) => {
+const Calender = ({ children }: Props) => {
   return (
     <div className='flex flex-col justify-center items-center w-[900px] bg-lime-400 m-auto min-h-[500px] mt-[100px]'>
       {children}
@@ -12,4 +12,4 @@ const Skeleton = ({ children }: Props) => {
   );
 };
 
-export default Skeleton;
+export default Calender;

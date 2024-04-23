@@ -1,4 +1,4 @@
-import { Routes } from '../models/Route';
+import { Routes } from '../../models/Route';
 import Link from 'next/link';
 import React from 'react';
 

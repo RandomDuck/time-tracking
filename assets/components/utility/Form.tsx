@@ -2,8 +2,9 @@
 
 import { useRouter } from 'next/navigation';
 import React, { FormEvent, useState } from 'react';
-import { User } from '../models/User';
-import { COMPANY_ROUTES, USER_ROUTES } from '../constants/routes';
+import Button from '../ui/Button';
+import { COMPANY_ROUTES, USER_ROUTES } from '../../constants/routes';
+import { User } from '../../models/User';
 
 interface Props {
   title: string;
@@ -24,19 +25,15 @@ const Form = ({ title }: Props) => {
 
       const user: User = await res.json();
 
-      const loggedInUser = { id: user.id, name: user.name, email: user.email }
+      const loggedInUser = { id: user.id, name: user.name, email: user.email };
 
-      sessionStorage.setItem(
-        'user',
-        JSON.stringify(loggedInUser)
-      );
+      sessionStorage.setItem('user', JSON.stringify(loggedInUser));
 
-      if(loggedInUser.name === 'admin'){
+      if (loggedInUser.name === 'admin') {
         router.push(COMPANY_ROUTES[0].url);
-      }else{
+      } else {
         router.push(USER_ROUTES[0].url);
       }
-      
     } catch (error) {
       alert('something went wrong');
     }
@@ -67,9 +64,7 @@ const Form = ({ title }: Props) => {
             id='passwordField'
             type='password'
           />
-          <button className='btn-primary' type='submit'>
-            {title} user
-          </button>
+          <Button type={'primary'}>{title.toUpperCase()}</Button>
         </form>
       </div>
     </div>
