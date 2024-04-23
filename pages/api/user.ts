@@ -1,13 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
-import { User } from '../../app/models/User';
-import { cookies } from 'next/headers';
+import { User } from '@/app/models/User';
 
-
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const filePath = 'json/data.json';
 
   if (req.method === 'POST') {
@@ -21,8 +16,7 @@ export default function handler(
         (user: User) => user.email === email && user.password === password
       );
 
-        res.status(200).json(foundUser);
-    
+      res.status(200).json(foundUser);
     } catch (error) {
       res.status(500).json({ message: 'no user found' });
     }
