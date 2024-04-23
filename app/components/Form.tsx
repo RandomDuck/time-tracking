@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import React, { FormEvent, useState } from 'react';
 import { User } from '../models/User';
-import { USER_ROUTES } from '../constants/routes';
+import { COMPANY_ROUTES, USER_ROUTES } from '../constants/routes';
 
 interface Props {
   title: string;
@@ -24,11 +24,19 @@ const Form = ({ title }: Props) => {
 
       const user: User = await res.json();
 
+      const loggedInUser = { id: user.id, name: user.name, email: user.email }
+
       sessionStorage.setItem(
         'user',
-        JSON.stringify({ id: user.id, name: user.name, email: user.email })
+        JSON.stringify(loggedInUser)
       );
-      router.push(USER_ROUTES[0].url);
+
+      if(loggedInUser.name === 'admin'){
+        router.push(COMPANY_ROUTES[0].url);
+      }else{
+        router.push(USER_ROUTES[0].url);
+      }
+      
     } catch (error) {
       alert('something went wrong');
     }

@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 import { FUNCTION_ROUTES } from '../constants/routes';
 
 const Header = () => {
-  const [route, setRoute] = useState(FUNCTION_ROUTES);
+  const [route] = useState(FUNCTION_ROUTES);
 
   return (
     <header className='flex justify-between p-3'>
