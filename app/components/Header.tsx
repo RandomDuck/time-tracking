@@ -1,13 +1,18 @@
-import React from 'react'
-import Navigation from './Navigation'
+'use client';
+
+import React, { useState } from 'react';
+import Navigation from './Navigation';
+import { FUNCTION_ROUTES } from '../constants/routes';
 
 const Header = () => {
-	return (
-		<header className='flex justify-between p-3'>
-			<h1>My header</h1>
-			<Navigation />
-		</header>
-	)
-}
+  const [route] = useState(FUNCTION_ROUTES);
 
-export default Header
+  return (
+    <header className='flex justify-between p-3'>
+      <h1>Time tracking</h1>
+      <Navigation routes={route} />
+    </header>
+  );
+};
+
+export default Header;

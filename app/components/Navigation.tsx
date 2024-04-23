@@ -1,15 +1,19 @@
-import Link from 'next/link'
-import React from 'react'
+import { Routes } from '../models/Route';
+import Link from 'next/link';
+import React from 'react';
 
-const Navigation = () => {
-	return (
-		<nav>
-			<ul>
-				<li><Link href={'/calender'}>Calender</Link></li>
-				<li><Link href={'/'}>Home</Link></li>
-			</ul>
-		</nav>
-	)
-}
+const Navigation = ({ routes }: Routes) => {
+  return (
+    <nav>
+      <ul>
+        {routes.map((route) => (
+          <li key={route.id} className=' float-left mr-5'>
+            <Link href={route.url}>{route.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 
-export default Navigation
+export default Navigation;
