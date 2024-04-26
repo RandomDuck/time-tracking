@@ -33,9 +33,9 @@ const MonthSelector = () => {
         <button onClick={goBack}>back</button>
         <button onClick={goForward}>forward</button>
       </div>
-      <div className='flex gap-2'>
+      <div className='flex gap-2 '>
         {daysInMonth.map((day, index) => (
-          <div key={index}>{day.day}</div>
+          <div className='w-5 h-10 border-solid border-black' key={index}>{day.day}</div>
         ))}
       </div>
     </div>
