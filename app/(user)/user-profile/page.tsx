@@ -1,6 +1,5 @@
 'use client';
 
-import Profile from '@/assets/components/utility/skeletons/Profile';
 import { User } from '@/assets/models/User';
 import checkIfRedirect from '@/lib/urlProofing';
 import { useRouter } from 'next/navigation';
@@ -21,11 +20,11 @@ export default function Home() {
   };
 
   return (
-    <Profile>
+    <>
       <h1>Welcome {user?.name}</h1>
       <button className='btn-primary' onClick={logOut}>
         Log out
       </button>
-    </Profile>
+    </>
   );
 }
