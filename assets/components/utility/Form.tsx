@@ -2,9 +2,10 @@
 
 import { useRouter } from 'next/navigation';
 import React, { FormEvent, useState } from 'react';
-import Button from '../ui/Button';
 import { COMPANY_ROUTES, USER_ROUTES } from '../../constants/routes';
-import { User } from '../../models/User';
+import { ButtonType } from '@/assets/constants/enums';
+import { User } from '@/assets/models/User';
+import Button from '../ui/Button';
 
 interface Props {
   title: string;
@@ -64,7 +65,7 @@ const Form = ({ title }: Props) => {
             id='passwordField'
             type='password'
           />
-          <Button type={'primary'}>{title.toUpperCase()}</Button>
+          <Button type={ButtonType.PRIMARY}>{title.toUpperCase()}</Button>
         </form>
       </div>
     </div>

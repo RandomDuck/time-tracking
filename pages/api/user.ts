@@ -3,7 +3,7 @@ import fs from 'fs';
 import { User } from '@/assets/models/User';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const filePath = 'json/data.json';
+  const filePath = './assets/json/data.json';
 
   if (req.method === 'POST') {
     const jsonData = fs.readFileSync(filePath, 'utf8');
