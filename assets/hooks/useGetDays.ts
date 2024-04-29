@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
+import { Day } from '../models/Month';
 
-interface Day {
-  day: number;
-}
 
-export const useGetDaysInMonthArray = (selectedMonth: number) => {
+export const useGetDays = (selectedMonth: number) => {
   const [daysInMonth, setDaysInMonth] = useState<Day[]>([]);
 
   useEffect(() => {
@@ -17,7 +15,7 @@ export const useGetDaysInMonthArray = (selectedMonth: number) => {
     ).getDate();
 
     for (let i = 0; i < lastDayOfMonth; i++) {
-      const dayObject = { day: i + 1 };
+      const dayObject = { dayIndex: i + 1 };
       daysInMonthArray.push(dayObject);
     }
 

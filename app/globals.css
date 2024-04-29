@@ -5,7 +5,7 @@
 
 
 button {
-  @apply  font-bold py-2 px-4 rounded;
+  @apply font-bold py-2 px-4 rounded border;
 }
 
 .primary{
@@ -17,5 +17,5 @@ button {
 }
 
 .ghost{
-  @apply  text-sky-500 border-solid border-2 border-sky-500
+  @apply text-sky-500 border-solid border-2 border-sky-500
 }

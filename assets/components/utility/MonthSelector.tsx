@@ -1,12 +1,13 @@
 'use client';
 
 import { CURRENT_MONTH } from '@/assets/constants/baseValues';
-import { useGetDaysInMonthArray } from '@/assets/hooks/useGetDaysArray';
+import { useGetDays } from '@/assets/hooks/useGetDays';
 import React, { useState } from 'react';
+import CurrentMonth from './CurrentMonth';
 
 const MonthSelector = () => {
   const [currentMonth, setCurrentMonth] = useState(CURRENT_MONTH);
-  const { daysInMonth } = useGetDaysInMonthArray(+currentMonth);
+  const { daysInMonth } = useGetDays(+currentMonth);
 
   const goBack = () => {
     const previousMonth = new Date(currentMonth);
@@ -21,7 +22,7 @@ const MonthSelector = () => {
   };
 
   return (
-    <div>
+    <div className='m-auto max-w-[900px]'>
       <h2>
         {currentMonth.toLocaleString('en-US', {
           month: 'long',
@@ -33,11 +34,7 @@ const MonthSelector = () => {
         <button onClick={goBack}>back</button>
         <button onClick={goForward}>forward</button>
       </div>
-      <div className='flex gap-2 '>
-        {daysInMonth.map((day, index) => (
-          <div className='w-5 h-10 border-solid border-black' key={index}>{day.day}</div>
-        ))}
-      </div>
+        <CurrentMonth days={daysInMonth} />
     </div>
   );
 };

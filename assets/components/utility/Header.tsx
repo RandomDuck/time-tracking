@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react';
 import Navigation from './Navigation';
-import { FUNCTION_ROUTES } from '../../constants/routes';
+import { USER_ROUTES } from '../../constants/routes';
 
 const Header = () => {
-  const [route] = useState(FUNCTION_ROUTES);
+  const [route] = useState(USER_ROUTES);
 
   return (
     <header className='flex justify-between p-3 bg-yellow-400 h-[100px] items-center'>

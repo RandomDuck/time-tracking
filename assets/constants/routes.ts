@@ -26,8 +26,8 @@ export const COMPANY_ROUTES = [
 ];
 
 export const ALL_ROUTES = [
-  FUNCTION_ROUTES,
-  INFO_ROUTES,
-  USER_ROUTES,
-  COMPANY_ROUTES,
+  { id: 0, name: 'Functions', value: FUNCTION_ROUTES },
+  { id: 1, name: 'Info', value: INFO_ROUTES },
+  { id: 2, name: 'User', value: USER_ROUTES },
+  { id: 3, name: 'Company', value: COMPANY_ROUTES},
 ];
