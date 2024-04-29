@@ -12,10 +12,10 @@ export const INFO_ROUTES = [
 ];
 
 export const USER_ROUTES = [
-  { id: 0, title: 'Profile', url: '/user-profile', type: 'user' },
-  { id: 1, title: 'Schedule', url: '/schedule', type: 'user' },
-  { id: 2, title: 'Timecard', url: '/timecard', type: 'user' },
-  { id: 3, title: 'Tracking', url: '/tracking', type: 'user' },
+  { id: 0, title: 'Profile', url: '/user/user-profile', type: 'user' },
+  { id: 1, title: 'Schedule', url: '/user/schedule', type: 'user' },
+  { id: 2, title: 'Timecard', url: '/user/timecard', type: 'user' },
+  { id: 3, title: 'Tracking', url: '/user/tracking', type: 'user' },
 ];
 
 export const COMPANY_ROUTES = [

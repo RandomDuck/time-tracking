@@ -19,3 +19,7 @@ button {
 .ghost{
   @apply text-sky-500 border-solid border-2 border-sky-500
 }
+
+.day{
+  @apply h-[100px] w-[100px] border-solid bg-red-100 border-black
+}

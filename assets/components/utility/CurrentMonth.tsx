@@ -7,8 +7,8 @@ const CurrentMonth = ({days}: Month) => {
 		<div className='max-w-[900px] m-auto gap-2 flex flex-wrap '>
 		{days.map((day, index) => (
 			<Link
-				href={`/schedule/day/${day.dayIndex}`}
-				className='h-[100px] w-[100px] border-solid bg-red-100 border-black'
+				href={`/user/schedule/${day.dayIndex}`}
+				className='day'
 				key={index}
 			>
 				{day.dayIndex.toLocaleString()}
