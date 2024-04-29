@@ -1,11 +1,11 @@
-export class MonthHours{
+export class MonthReport{
 	constructor(
-		public days: DayHours[], public isDone: boolean, public totalHours: number
+		public days: DayReport[], public totalHours: number, public isDone: boolean
 	){}
 }
 
 
-export class DayHours{
+export class DayReport{
 	constructor(
 		public date: Date, public hours: number, public isDone: boolean
 	){}
