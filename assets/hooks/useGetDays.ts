@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Day } from '../models/Month';
+import { Day } from '@/assets/models/Month';
 
 
 export const useGetDays = (selectedMonth: number) => {

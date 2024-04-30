@@ -3,3 +3,10 @@ export enum ButtonType {
   SECONDARY = 'secondary',
   GHOST = 'ghost',
 }
+
+export enum Actions {
+  REPORT_DAY,
+  REPORT_MONTH,
+  CLEAR_DAY,
+  CLEAR_MONTH,
+}

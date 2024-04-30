@@ -1,13 +1,7 @@
 'use client';
 
-import { DayReport, MonthReport } from '../models/TimeRapport';
-
-export enum Actions {
-  REPORT_DAY,
-  REPORT_MONTH,
-  CLEAR_DAY,
-  CLEAR_MONTH,
-}
+import { Actions } from '@/assets/constants/enums';
+import { MonthReport } from '@/assets//models/TimeRapport';
 
 export interface ReportAction {
   type: Actions;

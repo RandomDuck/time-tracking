@@ -1,20 +1,19 @@
 'use client';
 
+import { Actions } from '@/assets/constants/enums';
 import { ReportContext } from '@/assets/context/ReportContext';
-import { Actions } from '@/assets/reducers/ReportReducer';
 import Link from 'next/link';
 import React, { FormEvent, useContext, useState } from 'react';
 
 const Day = ({ params }: { params: { day: number } }) => {
-  const {report,  dispatch} = useContext(ReportContext)
+  const { report, dispatch } = useContext(ReportContext);
   const [input, setInput] = useState(0);
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    dispatch({type: Actions.REPORT_DAY, payload: input.toString()})
-    setInput(0)
-    
+    dispatch({ type: Actions.REPORT_DAY, payload: input.toString() });
+    setInput(0);
   };
-  
+
   return (
     <div>
       <h2>This is day: {params.day}</h2>

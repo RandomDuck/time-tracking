@@ -2,10 +2,10 @@
 
 import { useRouter } from 'next/navigation';
 import React, { FormEvent, useState } from 'react';
-import { COMPANY_ROUTES, USER_ROUTES } from '../../constants/routes';
+import { COMPANY_ROUTES, USER_ROUTES } from '@/assets/constants/routes';
 import { ButtonType } from '@/assets/constants/enums';
 import { User } from '@/assets/models/User';
-import Button from '../ui/Button';
+import Button from '@/assets/components/ui/Button';
 
 interface Props {
   title: string;

@@ -1,9 +1,8 @@
-export interface Month{
-	title?: string
-	days: Day[]
+export interface Month {
+  title?: string;
+  days: Day[];
 }
 
-
-export interface Day{
-	dayIndex: number
+export interface Day {
+  dayIndex: number;
 }

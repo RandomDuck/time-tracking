@@ -9,10 +9,10 @@ import MonthSelector from '@/assets/components/utility/MonthSelector';
 export default function Page() {
   const [user, setUser] = useState<User>();
 
-  // useEffect(() => {
-  //   setUser(JSON.parse(sessionStorage.getItem('user') || '{}'));
-  //   checkIfRedirect('/user');
-  // }, []);
+  useEffect(() => {
+    setUser(JSON.parse(sessionStorage.getItem('user') || '{}'));
+    checkIfRedirect('/user');
+  }, []);
 
   return (
     <>

@@ -3,7 +3,7 @@
 import { CURRENT_MONTH } from '@/assets/constants/baseValues';
 import { useGetDays } from '@/assets/hooks/useGetDays';
 import React, { useState } from 'react';
-import CurrentMonth from './CurrentMonth';
+import CurrentMonth from '@/assets/components/utility/CurrentMonth';
 
 const MonthSelector = () => {
   const [currentMonth, setCurrentMonth] = useState(CURRENT_MONTH);
