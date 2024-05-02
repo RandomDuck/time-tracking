@@ -3,21 +3,25 @@
 @tailwind utilities;
 
 
+main{
+  @apply min-h-[calc(100vh-200px)] flex flex-col justify-center items-center relative
+}
 
-button {
-  @apply font-bold py-2 px-4 rounded border;
+
+footer{
+  @apply flex flex-col justify-center items-center h-[100px] absolute bg-red-500 w-full
 }
 
 .primary{
-  @apply  text-white border-solid border-2 border-white
+  @apply text-white border-solid  border-white font-bold py-2 px-4 rounded border bg-green-600 w-[100px] flex flex-col items-center justify-center
 }
 
 .secondary{
-  @apply bg-red-500 text-black
+  @apply bg-red-500 text-black font-bold py-2 px-4 rounded border w-[100px] flex flex-col items-center justify-center
 }
 
 .ghost{
-  @apply text-sky-500 border-solid border-2 border-sky-500
+  @apply text-sky-500 border-solid  border-sky-500 font-bold py-2 px-4 rounded border w-[100px] flex flex-col items-center justify-center
 }
 
 .day{

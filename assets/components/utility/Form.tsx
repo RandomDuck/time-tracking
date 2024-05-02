@@ -41,9 +41,8 @@ const Form = ({ title }: Props) => {
   };
 
   return (
-    <div className='flex h-screen text-white'>
-      <h2>{title}</h2>
-      <div className='bg-slate-100 rounded-xl p-8 dark:bg-slate-800 m-auto w-[300px]'>
+    <div className=''>
+      <div className='bg-slate-100 rounded-xl p-8 dark:bg-slate-800 m-auto w-[300px] text-white'>
         <form onSubmit={(e) => submitHandler(e)} method='post'>
           <label className='block' htmlFor='emailField'>
             Email:
