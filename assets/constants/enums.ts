@@ -10,3 +10,12 @@ export enum Actions {
   CLEAR_DAY,
   CLEAR_MONTH,
 }
+
+export enum TimeInMS {
+  oneSecond = 1000,
+  oneMinute = 60 * 1000,
+  oneHour = 60 * 60 * 1000,
+  oneDay = 60 * 60 * 1000,
+  oneWeek = 7 * 24 * 60 * 60 * 1000,
+  oneMonth = 30 * 7 * 24 * 60 * 60 * 1000
+}
