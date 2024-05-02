@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
-import { User } from '@/app/models/User';
+import { User } from '@/assets/models/User';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const filePath = 'json/data.json';
+  const filePath = './assets/json/data.json';
 
   if (req.method === 'POST') {
     const jsonData = fs.readFileSync(filePath, 'utf8');
