@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Day } from '@/assets/models/Month';
 
-
 export const useGetDays = (selectedMonth: number) => {
   const [daysInMonth, setDaysInMonth] = useState<Day[]>([]);
 

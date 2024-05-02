@@ -1,7 +1,7 @@
 'use client';
 
 import { Actions } from '@/assets/constants/enums';
-import { ReportContext } from '@/assets/context/ReportContext';
+import { ReportContext } from '@/assets/contexts/ReportContext';
 import Link from 'next/link';
 import React, { FormEvent, useContext, useState } from 'react';
 

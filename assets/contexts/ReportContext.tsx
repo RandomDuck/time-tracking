@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import {MonthReport } from '../models/TimeRapport';
+import { MonthReport } from '@/assets/models/TimeRapport';
 import { Dispatch, ReactNode, createContext, useReducer } from 'react';
-import { ReportAction, ReportReducer } from '../reducers/ReportReducer';
+import { ReportAction, ReportReducer } from '@/assets/reducers/ReportReducer';
 
 interface ContextProps {
   children: ReactNode;
@@ -21,8 +21,11 @@ export const ReportContext = createContext<IReportContext>({
 });
 
 export const ContextWrapper = ({ children }: ContextProps) => {
-	const [report, dispatch] = useReducer(ReportReducer, {days: [], totalHours: 0, isDone: false}) 
-
+  const [report, dispatch] = useReducer(ReportReducer, {
+    days: [],
+    totalHours: 0,
+    isDone: false,
+  });
 
   return (
     <ReportContext.Provider value={{ report, dispatch }}>
