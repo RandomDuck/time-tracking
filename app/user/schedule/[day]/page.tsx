@@ -10,9 +10,12 @@ const Day = ({ params }: { params: { day: number } }) => {
   const [input, setInput] = useState(0);
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    dispatch({ type: Actions.REPORT_DAY, payload: input.toString() });
+    dispatch({ type: Actions.REPORT_DAY, payload: JSON.stringify({ dayIndex: params.day, hours: input})  });
     setInput(0);
   };
+
+  console.log(report);
+  
 
   return (
     <div>

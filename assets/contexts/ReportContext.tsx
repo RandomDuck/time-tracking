@@ -14,7 +14,7 @@ interface IReportContext {
 }
 
 export const ReportContext = createContext<IReportContext>({
-  report: new MonthReport([], 0, false),
+  report: new MonthReport(0, [], 0, false),
   dispatch: () => {
     return;
   },
@@ -22,6 +22,7 @@ export const ReportContext = createContext<IReportContext>({
 
 export const ContextWrapper = ({ children }: ContextProps) => {
   const [report, dispatch] = useReducer(ReportReducer, {
+    monthIndex: 0,
     days: [],
     totalHours: 0,
     isDone: false,

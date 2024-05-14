@@ -9,10 +9,10 @@ export default function Home() {
   const [user, setUser] = useState<User>();
   const router = useRouter();
 
-  useEffect(() => {
-    setUser(JSON.parse(sessionStorage.getItem('user') || '{}'));
-    checkIfRedirect('/user');
-  }, []);
+  // useEffect(() => {
+  //   setUser(JSON.parse(sessionStorage.getItem('user') || '{}'));
+  //   checkIfRedirect('/user');
+  // }, []);
 
   const logOut = () => {
     sessionStorage.removeItem('user');

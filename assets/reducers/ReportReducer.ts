@@ -1,7 +1,7 @@
 'use client';
 
 import { Actions } from '@/assets/constants/enums';
-import { MonthReport } from '@/assets//models/TimeRapport';
+import { DayReport, MonthReport } from '@/assets//models/TimeRapport';
 
 export interface ReportAction {
   type: Actions;
@@ -11,18 +11,32 @@ export interface ReportAction {
 export const ReportReducer = (report: MonthReport, action: ReportAction) => {
   switch (action.type) {
     case Actions.REPORT_DAY: {
-      const newDayReport = action.payload;
-      const updatedDayArray = [
-        ...report.days,
-        { date: new Date(), hours: +newDayReport, isDone: true },
-      ];
+      const { dayIndex, hours } = JSON.parse(action.payload) as DayReport;
 
-      return {
-        ...report,
-        days: updatedDayArray,
-        totalHours: +newDayReport,
-        isDone: false,
-      };
+      if (report.days.find((day) => day.dayIndex === dayIndex)) {
+        const updatedDay = report.days.map((day) => {
+          if (day.dayIndex === dayIndex) {
+            return { ...day, hours: hours };
+          }
+          return day;
+        });
+        return {
+          ...report,
+          days: updatedDay,
+          totalHours: report.totalHours + hours,
+          isDone: true,
+        };
+      } else {
+        return {
+          ...report,
+          days: [
+            ...report.days,
+            new DayReport(dayIndex, new Date(), hours, true),
+          ],
+          totalHours: report.totalHours + hours,
+          isDone: false,
+        };
+      }
     }
     default:
       return report;
