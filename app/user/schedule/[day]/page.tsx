@@ -1,25 +1,27 @@
 'use client';
 
+import DayHours from '@/assets/components/utility/DayHours';
 import { Actions } from '@/assets/constants/enums';
 import { ReportContext } from '@/assets/contexts/ReportContext';
 import Link from 'next/link';
 import React, { FormEvent, useContext, useState } from 'react';
 
 const Day = ({ params }: { params: { day: number } }) => {
-  const { report, dispatch } = useContext(ReportContext);
+  const { dispatch } = useContext(ReportContext);
   const [input, setInput] = useState(0);
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    dispatch({ type: Actions.REPORT_DAY, payload: JSON.stringify({ dayIndex: params.day, hours: input})  });
+    dispatch({
+      type: Actions.REPORT_DAY,
+      payload: JSON.stringify({ dayIndex: params.day, hours: input }),
+    });
     setInput(0);
   };
-
-  console.log(report);
-  
 
   return (
     <div>
       <h2>This is day: {params.day}</h2>
+      <DayHours dayIndex={params.day} />
       <form onSubmit={handleSubmit}>
         <label htmlFor='hours'>Worked hours:</label>
         <input

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { ReportContext } from '@/assets/contexts/ReportContext';
 import React, { useContext } from 'react';

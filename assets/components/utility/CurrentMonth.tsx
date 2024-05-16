@@ -1,3 +1,5 @@
+'use client'
+
 import { Month } from '@/assets/models/Month'
 import Link from 'next/link'
 import React from 'react'
